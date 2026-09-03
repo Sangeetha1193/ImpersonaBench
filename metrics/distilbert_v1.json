@@ -1,0 +1,35 @@
+{
+  "model": "distilbert_v1",
+  "checkpoint": "distilbert-base-uncased",
+  "max_length": 128,
+  "epochs": 4,
+  "learning_rate": 2e-05,
+  "batch_size": 8,
+  "seed": 42,
+  "best_metric_name": "macro_f1",
+  "best_metric": 0.7623488067996077,
+  "best_epoch": 4.0,
+  "train": {
+    "accuracy": 0.8557993730407524,
+    "macro_f1": 0.7968026642599817,
+    "impersonation_f1": 0.9485714285714286,
+    "strict_fpr_legit": 0.0,
+    "any_scam_fpr_legit": 0.24817518248175183
+  },
+  "val": {
+    "accuracy": 0.8260869565217391,
+    "macro_f1": 0.7623488067996077,
+    "impersonation_f1": 0.8947368421052632,
+    "strict_fpr_legit": 0.03333333333333333,
+    "any_scam_fpr_legit": 0.23333333333333334
+  },
+  "gaps": {
+    "macro_f1_train_minus_val": 0.03445385746037399,
+    "impersonation_f1_train_minus_val": 0.05383458646616546
+  },
+  "val_strict_fpr_vs_tfidf_baseline": "same",
+  "sample_prediction": {
+    "text": "Bhai phone toot gaya, 5000 is UPI pe abhi bhej de 9876512340@ybl. Call mat karna.",
+    "pred": "IMPERSONATION_SCAM"
+  }
+}

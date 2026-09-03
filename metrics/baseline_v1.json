@@ -1,0 +1,23 @@
+{
+  "model": "baseline_tfidf_logreg_v1",
+  "primary_metric": "IMPERSONATION_SCAM_f1",
+  "val": {
+    "accuracy": 0.927536231884058,
+    "macro_f1": 0.9196772418852008,
+    "impersonation_f1": 0.9473684210526315,
+    "strict_fpr_legit": 0.03333333333333333,
+    "any_scam_fpr_legit": 0.06666666666666667
+  },
+  "test": {
+    "accuracy": 0.927536231884058,
+    "macro_f1": 0.9174600352231931,
+    "impersonation_f1": 0.95,
+    "strict_fpr_legit": 0.03333333333333333,
+    "any_scam_fpr_legit": 0.13333333333333333
+  },
+  "train": {
+    "accuracy": 0.9968652037617555,
+    "macro_f1": 0.9971902131018153,
+    "impersonation_f1": 1.0
+  }
+}

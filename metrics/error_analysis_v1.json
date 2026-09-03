@@ -1,0 +1,36 @@
+{
+  "model": "baseline_tfidf_logreg_v1",
+  "val_errors": 5,
+  "val_total": 69,
+  "test_errors": 5,
+  "test_total": 69,
+  "top_confusion_pairs": [
+    {
+      "true_label": "LEGIT_TRANSACTIONAL",
+      "predicted_label": "OTHER_SCAM",
+      "count": 3
+    },
+    {
+      "true_label": "IMPERSONATION_SCAM",
+      "predicted_label": "OTHER_SCAM",
+      "count": 2
+    },
+    {
+      "true_label": "LEGIT_PERSONAL",
+      "predicted_label": "IMPERSONATION_SCAM",
+      "count": 1
+    }
+  ],
+  "error_type_counts": {
+    "brand_alert_confusion": 6,
+    "impersonation_as_other_scam": 2,
+    "template_overlap": 2
+  },
+  "severity_counts": {
+    "high": 2,
+    "low": 2,
+    "medium": 6
+  },
+  "upi_handle_pct_errors": 10.0,
+  "upi_handle_pct_correct": 33.59375
+}

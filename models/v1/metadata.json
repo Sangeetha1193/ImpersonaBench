@@ -1,0 +1,81 @@
+{
+  "model_name": "impersonabench-tfidf-logreg-v1",
+  "model_type": "sklearn_tfidf_logistic_regression",
+  "created_at": "2026-08-29T17:10:19Z",
+  "git_commit": "7884cc28f032393975fa461f430963929abdb29f",
+  "sklearn_version": "1.7.2",
+  "python_dependency_note": "Load with the same sklearn major.minor as training when possible.",
+  "training_rows": 319,
+  "train_file": "data/splits/train_v1.csv",
+  "val_file": "data/splits/val_v1.csv",
+  "test_file": "data/splits/test_v1.csv",
+  "split_seed": 42,
+  "split_report": "reports/split_v1.md",
+  "artifact": "models/v1/model.joblib",
+  "artifact_format": "sklearn.pipeline.Pipeline (TfidfVectorizer + LogisticRegression)",
+  "vectorizer": {
+    "class": "TfidfVectorizer",
+    "lowercase": true,
+    "ngram_range": [
+      1,
+      2
+    ],
+    "min_df": 2,
+    "max_features": 10000,
+    "token_pattern": "(?u)\\b\\w[\\w@.-]*\\b",
+    "token_pattern_note": "Keeps digits and @handles as single tokens (e.g. 98765@ybl)"
+  },
+  "classifier": {
+    "class": "LogisticRegression",
+    "solver": "lbfgs",
+    "class_weight": "balanced",
+    "max_iter": 2000,
+    "random_state": 42
+  },
+  "label_schema_path": "models/v1/label_schema.json",
+  "primary_metric": "IMPERSONATION_SCAM F1",
+  "guardrail_metric": "strict_fpr_legit",
+  "metrics_val": {
+    "impersonation_f1": 0.9473684210526315,
+    "macro_f1": 0.9196772418852008,
+    "strict_fpr_legit": 0.03333333333333333,
+    "accuracy": 0.927536231884058
+  },
+  "metrics_test": {
+    "impersonation_f1": 0.95,
+    "macro_f1": 0.9174600352231931,
+    "strict_fpr_legit": 0.03333333333333333,
+    "accuracy": 0.927536231884058
+  },
+  "champion_reason": "TF-IDF wins impersonation F1 on test with equal or better strict FPR; simpler and faster when scores are not close.",
+  "champion_selected_over": "distilbert_v1",
+  "comparison_report": "reports/model_comparison_v1.md",
+  "error_analysis_report": "reports/error_analysis_v1.md",
+  "known_limitations": [
+    "Real HDFC/BSNL/Flipkart transactional SMS can be flagged as OTHER_SCAM (brand-alert confusion).",
+    "Matched-pair secrecy/refund wording can false-alarm on legit personal messages (twin template overlap).",
+    "UPI Circle\u2013style scams may land in OTHER_SCAM instead of IMPERSONATION_SCAM; small 69-row test set."
+  ],
+  "reload_verification": [
+    {
+      "id": "ib_v1_000005",
+      "true_label": "IMPERSONATION_SCAM",
+      "pred_id": 0,
+      "pred_label": "IMPERSONATION_SCAM",
+      "correct": true
+    },
+    {
+      "id": "ib_v1_000031",
+      "true_label": "IMPERSONATION_SCAM",
+      "pred_id": 0,
+      "pred_label": "IMPERSONATION_SCAM",
+      "correct": true
+    }
+  ],
+  "not_included": [
+    "distilbert_v1 (experiment only)",
+    "baseline_tfidf_plus_features_v1 (hurt val)",
+    "val/test CSV copies",
+    "secrets or API keys"
+  ]
+}

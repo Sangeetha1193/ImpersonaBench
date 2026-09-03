@@ -7,8 +7,8 @@ import pandas as pd
 
 ROOT = Path(__file__).parent
 DATA = ROOT / "data"
-RAW = DATA / "impersonabench_dataset.csv"
-GOLD = DATA / "gold100_pairs.csv"
+RAW = ROOT / "archive" / "raw" / "impersonabench_dataset.csv"
+GOLD = ROOT / "archive" / "raw" / "gold100_pairs.csv"
 OUT = DATA / "dataset_v1.csv"
 
 COLUMNS = [

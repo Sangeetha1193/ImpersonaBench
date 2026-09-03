@@ -1,0 +1,9 @@
+# Core ML (v1 champion)
+pandas>=2.0
+scikit-learn>=1.3
+joblib>=1.3
+
+
+# torch>=2.0
+# transformers>=4.40
+# accelerate>=1.1

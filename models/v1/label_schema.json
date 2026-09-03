@@ -1,0 +1,40 @@
+{
+  "version": "v1",
+  "description": "4-class label schema for ImpersonaBench message classification",
+  "label_to_id": {
+    "IMPERSONATION_SCAM": 0,
+    "LEGIT_PERSONAL": 1,
+    "OTHER_SCAM": 2,
+    "LEGIT_TRANSACTIONAL": 3
+  },
+  "id_to_label": {
+    "0": "IMPERSONATION_SCAM",
+    "1": "LEGIT_PERSONAL",
+    "2": "OTHER_SCAM",
+    "3": "LEGIT_TRANSACTIONAL"
+  },
+  "focal_class": "IMPERSONATION_SCAM",
+  "focal_class_id": 0,
+  "classes": [
+    {
+      "id": 0,
+      "name": "IMPERSONATION_SCAM",
+      "description": "Trusted-contact impersonation asking for UPI/payment"
+    },
+    {
+      "id": 1,
+      "name": "LEGIT_PERSONAL",
+      "description": "Benign personal/family/colleague chat"
+    },
+    {
+      "id": 2,
+      "name": "OTHER_SCAM",
+      "description": "Non-impersonation scams (KYC, OTP, lottery, brand fraud)"
+    },
+    {
+      "id": 3,
+      "name": "LEGIT_TRANSACTIONAL",
+      "description": "Real bank, telco, or merchant alerts"
+    }
+  ]
+}

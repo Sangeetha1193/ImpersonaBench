@@ -1,0 +1,26 @@
+# Python
+__pycache__/
+**/__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.env
+*.log
+
+# IDE / OS
+.idea/
+.vscode/
+*.swp
+.DS_Store
+Thumbs.db
+
+# Large experiment artifacts (scripts + metrics stay; weights stay local)
+models/distilbert_v1/
+models/baseline_tfidf_plus_features_v1.joblib
+models/baseline_tfidf_logreg_v1.joblib
+archive/experiments/
+
+# Notebooks / personal notes (keep out of public repo)
+*.ipynb
+material to study.md
